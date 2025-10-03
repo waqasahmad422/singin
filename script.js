@@ -1,9 +1,28 @@
-let s_btn=document.getElementById("signup");
-let l_btn=document.getElementById("login");
+document.addEventListener("DOMContentLoaded", () => {
+    let signupBtn = document.getElementById("signupBtn");
+    let loginBtn = document.getElementById("loginBtn");
+    // let logoutBtn = document.getElementById("logoutBtn");
+    let loginForm = document.getElementById("login-form");
 
-s_btn.addEventListener('click',()=>{
-    location.href="http://127.0.0.1:5500/login.html"
-})
-l_btn.addEventListener('click',()=>{
-    location.href=""
-})
+    if (signupBtn) {
+        signupBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "./login.html";
+        });
+    }
+
+    if (loginForm) {
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            console.log("Form submitted, event type:", e.type);
+            window.location.href = "https://kbiz-livid.vercel.app/";
+        });
+    }
+
+    if (logoutBtn) {
+        logoutBtn.addEventListener("click", (e) => {
+            e.preventDefault();
+            window.location.href = "./signup.html";
+        });
+    }
+});
